@@ -14,9 +14,17 @@
           "assets/**"
         ]
       }
+    },
+    {
+      "src": "api/envtest.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/envtest",
+      "dest": "api/envtest.js"
+    },
     {
       "src": "/(.*)",
       "dest": "lib/server/server.js"
