@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "lib/server/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "translations/**",
+          "views/**",
+          "static/**",
+          "bundle/**",
+          "assets/**"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "lib/server/server.js"
+    }
+  ]
+}
